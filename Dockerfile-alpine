@@ -1,11 +1,11 @@
-FROM alpine:3.11
+FROM alpine:3.13
 LABEL maintainer "Lucas Lorentz <lucaslorentzlara@hotmail.com>"
 
 EXPOSE 80 443 2019
 ENV XDG_CONFIG_HOME /config
 ENV XDG_DATA_HOME /data
 
-RUN apk add --no-cache ca-certificates curl
+RUN apk add -U --no-cache ca-certificates
 
 COPY artifacts/binaries/linux/amd64/caddy /bin/
 
